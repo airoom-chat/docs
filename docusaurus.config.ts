@@ -1,10 +1,15 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { version } from 'react';
 
 const config: Config = {
   title: 'Airoom.chat',
-  tagline: 'AI rooms are cool',
+  tagline: '0.1.0',
+  customFields: {
+    version: '0.1.0',
+    versiondate: '2024-04-22',
+  },
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -26,7 +31,15 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      'zh-Hans': {
+        label: '中文（简体）',
+      },
+    },
   },
 
   presets: [
@@ -58,10 +71,12 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'airoom.chat',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
+        href: 'https://airoom.chat',
+        target: '_self',
       },
       items: [
         {
